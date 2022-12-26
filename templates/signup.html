@@ -1,0 +1,35 @@
+{% extends 'base.html' %}{% block title %}Sign Up{% endblock title %}
+
+{% block body %}
+    <body class="text-center">
+
+    <main class="form-signin w-100 m-auto">
+        <div class="container-sm" style="display: flex;justify-content: center; margin-top: 10%">
+            <form style="padding: 5%; border-radius: 10%; background-color: #55B8FFFF" action="/signup" method="post">
+                {% csrf_token %}
+                <img class="mb-4" src="/static/images/logo.gif" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal"><b>Please Sign In</b></h1>
+
+                <div style="display: flex; max-width: 280px;flex-direction: column;gap:16px">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="User Name" name="name">
+                        <label for="floatingPassword" style="font-weight: bolder">User Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="mail">
+                        <label for="floatingInput" style="font-weight: bolder">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                        <label for="floatingPassword" style="font-weight: bolder">Password</label>
+                    </div>
+                    <a style="color: red" href="/signin">Already Have Account Sign In</a>
+                    <button class="w-100 btn btn-lg btn-primary" style="font-weight: bolder">Sign Up
+                    </button>
+                    <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+                </div>
+            </form>
+        </div>
+    </main>
+    </body>
+{% endblock body %}

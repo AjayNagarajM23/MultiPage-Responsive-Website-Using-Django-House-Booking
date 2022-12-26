@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block title %} Bookings {% endblock title %}
+
+{% block body %}
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light" style="font-size: 100px; font-weight: bolder">Contact Us</h1>
+                <p class="lead text-muted">We are here for you help in ech step you take for any query contact us</p>
+
+            </div>
+        </div>
+    </section>
+    <div class="container-sm">
+        <form action="/contact" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="mail">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" >Enter your Query</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="query">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+            </div>
+            <div style="display: flex; justify-content: center">
+                <button class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock body %}
