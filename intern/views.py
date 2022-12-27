@@ -37,6 +37,20 @@ def contact(request):
     return render(request, 'contact.html')
 
 
+def postadd(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        phno = request.POST['phno']
+        house = request.POST['house']
+        aboutHouse = request.POST['abouthouse']
+
+        messages.success(request, name)
+        messages.error(request,phno)
+        messages.warning(request,house)
+        messages.info(request,aboutHouse)
+        return render(request, 'showadd.html')
+    return render(request, 'postadd.html')
+
 def signin(request):
     if request.method == "POST":
         username = request.POST['name']
@@ -80,3 +94,7 @@ def signout(request):
     logout(request)
     messages.success(request, " Logged out Successfully ")
     return redirect('index')
+
+
+def showadd(request):
+    return render(request, 'showadd.html')
