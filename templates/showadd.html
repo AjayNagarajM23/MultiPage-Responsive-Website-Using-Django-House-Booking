@@ -1,26 +1,46 @@
 {% extends 'base.html' %} {% block title %} Home {% endblock title %}
 
 {% block body %}
-    <div class="container-sm" style="background-color: white; border-radius: 30px; border: 6px solid red; margin-top: 50px">
-        {% for message in messages %}
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Buy Your Dream House</h1>
+                    <a href="/contact" class="btn btn-primary my-2">Contact Us</a>
+                    <a href="/postadd" class="btn btn-secondary my-2">Post Add</a>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                <h1 class="display-5 fw-bold lh-1 mb-3">Name : {{ message }}</h1>
+        <div class="album py-5 bg-light">
+            <div class="container">
 
-            {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for ele in add %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{{ ele.houseimg.url }}" alt="..." >
+                            <div class="card-body">
+                                <h4>Name Of Owner : {{ ele.name }}</h4>
+                                <h4>Contact :       {{ ele.phno }}</h4>
+                                <h4>House Name :    {{ ele.housename }}</h4>
+                                <h4>House Number :  {{ ele.houseno }}</h4>
+                                <h6>House Address : {{ ele.houseaddr }}</h6>
+                                <label>About :      {{ ele.description }}</label>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn btn-outline-success">Buy</button>
+                                        <button type="button" class="btn btn btn-outline-secondary">Contact Owner</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
-                <h2 class="display-5 fw-bold lh-1 mb-3">Phone Number: {{ message }}</h2>
-
-            {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
-
-                <h2 class="display-5 fw-bold lh-1 mb-3">House Info: {{ message }}</h2>
-
-            {% else %}
-
-                <p class="lead">{{ message }} </p>
-
-            {% endif %}
-
-        {% endfor %}
-    </div>
+    </main>
 {% endblock body %}

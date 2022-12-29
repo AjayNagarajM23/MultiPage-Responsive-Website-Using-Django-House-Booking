@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from VivekInternShip import settings
+from intern.models import PostHouse
 
 
 def index(request):
@@ -41,15 +42,20 @@ def postadd(request):
     if request.method == 'POST':
         name = request.POST['name']
         phno = request.POST['phno']
-        house = request.POST['house']
+        housename = request.POST['housename']
+        houseno = request.POST['houseno']
+        housephoto = request.FILES['photo']
+        houseadd = request.POST['houseadd']
         aboutHouse = request.POST['abouthouse']
 
-        messages.success(request, name)
-        messages.error(request,phno)
-        messages.warning(request,house)
-        messages.info(request,aboutHouse)
-        return render(request, 'showadd.html')
+        add_info = PostHouse(name=name, phno=phno, housename=housename,
+                           houseno=houseno, houseimg=housephoto, houseaddr=houseadd,
+                           description=aboutHouse)
+        add_info.save()
+        messages.success(request, "New Add Added")
+        return redirect('showadd')
     return render(request, 'postadd.html')
+
 
 def signin(request):
     if request.method == "POST":
@@ -97,4 +103,5 @@ def signout(request):
 
 
 def showadd(request):
-    return render(request, 'showadd.html')
+    add = PostHouse.objects.all()
+    return render(request, 'showadd.html', {'add': add})
