@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %} Home {% endblock title %}
 
 {% block body %}
-        <section class="py-5 text-center container">
+    <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-size: 100px; font-weight: bolder">Post Add</h1>
@@ -15,19 +15,23 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Enter your Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       name="name">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Enter your Contact No</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phno">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       name="phno">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Enter Your House Name </label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="housename">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       name="housename">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Enter Your House Number </label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="houseno">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       name="houseno">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"><b>Upload Picture</b></label>

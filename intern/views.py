@@ -49,8 +49,8 @@ def postadd(request):
         aboutHouse = request.POST['abouthouse']
 
         add_info = PostHouse(name=name, phno=phno, housename=housename,
-                           houseno=houseno, houseimg=housephoto, houseaddr=houseadd,
-                           description=aboutHouse)
+                             houseno=houseno, houseimg=housephoto, houseaddr=houseadd,
+                             description=aboutHouse)
         add_info.save()
         messages.success(request, "New Add Added")
         return redirect('showadd')

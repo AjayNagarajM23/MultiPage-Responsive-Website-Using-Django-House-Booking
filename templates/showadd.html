@@ -18,25 +18,26 @@
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     {% for ele in add %}
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ ele.houseimg.url }}" alt="..." >
-                            <div class="card-body">
-                                <h4>Name Of Owner : {{ ele.name }}</h4>
-                                <h4>Contact :       {{ ele.phno }}</h4>
-                                <h4>House Name :    {{ ele.housename }}</h4>
-                                <h4>House Number :  {{ ele.houseno }}</h4>
-                                <h6>House Address : {{ ele.houseaddr }}</h6>
-                                <label>About :      {{ ele.description }}</label>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn btn-outline-success">Buy</button>
-                                        <button type="button" class="btn btn btn-outline-secondary">Contact Owner</button>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="{{ ele.houseimg.url }}" alt="...">
+                                <div class="card-body">
+                                    <h4>Name Of Owner : {{ ele.name }}</h4>
+                                    <h4>Contact : {{ ele.phno }}</h4>
+                                    <h4>House Name : {{ ele.housename }}</h4>
+                                    <h4>House Number : {{ ele.houseno }}</h4>
+                                    <h6>House Address : {{ ele.houseaddr }}</h6>
+                                    <label>About : {{ ele.description }}</label>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn btn-outline-success">Buy</button>
+                                            <button type="button" class="btn btn btn-outline-secondary">Contact Owner
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
             </div>
