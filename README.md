@@ -9,5 +9,5 @@
 ## Posting ADD (Dynamic)
 ![image](https://user-images.githubusercontent.com/105035860/210095737-67a1cba5-2d2e-4406-b4f5-267c5cab309d.png)
 
-## ADD page (the adds will show hwre )
+## ADD page (the adds will show here )
 ![image](https://user-images.githubusercontent.com/105035860/210095809-bf12093f-12af-4ad2-8812-4c811b2909f7.png)
